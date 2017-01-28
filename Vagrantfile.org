@@ -1,0 +1,93 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "ubuntu/trusty64"
+  # config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
+  # config.vm.box_check_update = false
+  # config.vm.network "forwarded_port", guest: 80, host: 8080
+  # config.vm.network "forwarded_port", guest: 8080, host: 8080
+  # config.vm.network "forwarded_port", guest: 9000, host: 9000
+  # config.vm.network "private_network", type: "dhcp"
+  # config.vm.network "private_network", ip: "192.168.33.10"
+  # config.vm.network "private_network", ip: "192.168.33.10", virtualbox__intnet: "intnet0"
+  # config.vm.network "public_network"
+  # config.vm.synced_folder "../data", "/vagrant_data"
+  # config.vm.synced_folder ".", "/vagrant", disabled: true
+  # config.vm.provider "virtualbox" do |vb|
+  #   vb.memory = "4096"
+  #   vb.cpus = "2"
+  #   vb.customize ["modifyvm", :id, "--memory", "4096"]
+  #   vb.customize ["modifyvm", :id, "--cpus", "2"]
+  #   vb.customize ["modifyvm", :id, "--ioapic", "on"]
+  #   vb.customize ["modifyvm", :id, "--graphicscontroller", "vboxvga"]
+  #   vb.customize ["modifyvm", :id, "--accelerate3d", "on"]
+  #   vb.customize ["modifyvm", :id, "--vram", "128"]
+  #   vb.customize ["modifyvm", :id, "--hwvirtex", "on"]
+  # end
+  # config.vm.provider "parallels" do |v|
+  #   v.memory = "1024"
+  #   v.cpus = "1"
+  # end
+  # config.vm.provider :managed do |managed, override|
+  #   override.vm.box = "managed"
+  #   override.vm.box_url = "https://github.com/tknerr/vagrant-managed-servers/raw/master/dummy.box"
+  #   override.ssh.username = "vagrant"
+  #   override.ssh.private_key_path = "~/.ssh/id_rsa"
+  #   managed.server = "localhost"
+  # end
+  # config.vm.provider :aws do |aws, override|
+  #   override.vm.box = "aws"
+  #   override.vm.box_url = "https://github.com/mitchellh/vagrant-aws/raw/master/dummy.box"
+  #   override.ssh.username = ENV['AWS_SSH_USERNAME']
+  #   override.ssh.private_key_path = ENV['AWS_SSH_KEY']
+  #   aws.access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  #   aws.secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  #   aws.keypair_name = ENV['AWS_KEYPAIR_NAME']
+  #   aws.region = "ap-northeast-1"
+  #   aws.instance_type = "t2.micro"
+  #   aws.ami = "ami-936d9d93"
+  #   aws.security_groups = [
+  #     ENV['AWS_SECURITY_GROUP']
+  #   ]
+  #   aws.tags = {
+  #     'Name' => 'vagrant',
+  #   }
+  # end
+  # config.vm.provider :google do |google, override|
+  #   override.vm.box = "gce"
+  #   override.vm.box_url = "https://github.com/mitchellh/vagrant-google/raw/master/google.box"
+  #   override.ssh.username = "vagrant"
+  #   override.ssh.private_key_path = "~/.ssh/google_compute_engine"
+  #   google.google_project_id = ENV['GOOGLE_PROJECT_ID']
+  #   google.google_client_email = ENV['GOOGLE_CLIENT_EMAIL']
+  #   google.google_json_key_location = "vagrant.json"
+  #   google.zone = "asia-east1-a"
+  #   google.machine_type = "f1-micro"
+  #   google.image = "ubuntu-1404-trusty-v20150316"
+  #   google.name = "vagrant"
+  # end
+  # config.vm.provider "docker" do |d|
+  #   d.build_dir = "."
+  # end
+  # config.push.define "atlas" do |push|
+  #   push.app = "YOUR_ATLAS_USERNAME/YOUR_APPLICATION_NAME"
+  # end
+  # config.vm.provision "shell", inline: <<-SHELL
+  #   sudo apt-get update
+  #   sudo apt-get install -y apache2
+  # SHELL
+  # config.vm.provision "shell", path: "scripts/bootstrap.sh", privileged: false
+  # config.vm.provision "shell", path: "scripts/scm.sh", privileged: false
+  # config.vm.provision "docker"
+  # config.vm.provision "docker" do |d|
+  #   d.pull_images "ubuntu"
+  #   d.build_image "/vagrant/scripts"
+  #   d.build_image "/vagrant/scripts", args: "-f /vagrant/scripts/Dockerfile.trusty -t vagrant/ubuntu:trusty"
+  #   d.run "ubuntu"
+  #   d.run "ubuntu", cmd: "bash -l", args: "-v '/vagrant:/var/www'"
+  # end
+  # config.vm.define "ubuntu", autostart: true, primary: true do |server|
+  #   server.vm.box = "ubuntu/trusty64"
+  # end
+end
